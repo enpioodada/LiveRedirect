@@ -36,8 +36,6 @@ func getTestVideoUrl(c *gin.Context) {
 	fmt.Fprintln(c.Writer, "#EXTM3U")
 	fmt.Fprintln(c.Writer, "#EXTINF:-1 tvg-name=\""+str_time+"\" tvg-logo=\"https://cdn.jsdelivr.net/gh/youshandefeiyang/IPTV/logo/tg.jpg\" group-title=\"列表更新时间\","+str_time)
 	fmt.Fprintln(c.Writer, "https://cdn.jsdelivr.net/gh/youshandefeiyang/testvideo/time/time.mp4")
-	fmt.Fprintln(c.Writer, "#EXTINF:-1 tvg-name=\""+str_time+"\" tvg-logo=\"https://cdn.jsdelivr.net/gh/youshandefeiyang/IPTV/logo/tg.jpg\" group-title=\"列表更新时间\","+str_time)
-	fmt.Fprintln(c.Writer, "https://cdn.jsdelivr.net/gh/youshandefeiyang/testvideo/time/time.mp4")
 }
 
 func getLivePrefix(c *gin.Context) string {
