@@ -13,11 +13,9 @@ COPY ./Golang/liveurls/*.go ./liveurls/
 RUN go build -o /allinone
 
 FROM alpine:3.14
-ENV TZ Asia/Shanghai
+RUN apk update && apk add tzdata
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone
 
-RUN apk add tzdata && cp /usr/share/zoneinfo/${TZ} /etc/localtime \
-    && echo ${TZ} > /etc/timezone \
-    && apk del tzdata
 
 COPY --from=build /allinone /allinone
 
