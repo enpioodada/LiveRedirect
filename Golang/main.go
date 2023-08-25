@@ -1,5 +1,5 @@
 // Package Golang
-// @Time:2023/06/02 10:29
+// @Time:2023/08/23 11:30
 // @File:main.go
 // @SoftWare:Goland
 // @Author:feiyang
@@ -149,8 +149,7 @@ func setupRouter(adurl string) *gin.Engine {
 		case "douyu":
 			douyuobj := &liveurls.Douyu{}
 			douyuobj.Rid = rid
-			douyuobj.Stream_type = c.DefaultQuery("stream", "hls")
-			douyuobj.Cdn_type = c.DefaultQuery("cdn", "openhls-tct")
+			douyuobj.Stream_type = c.DefaultQuery("stream", "flv")
 			c.Redirect(http.StatusMovedPermanently, duanyan(adurl, douyuobj.GetRealUrl()))
 		case "huya":
 			huyaobj := &liveurls.Huya{}
