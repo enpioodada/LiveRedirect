@@ -148,10 +148,9 @@ func setupRouter(adurl string) *gin.Engine {
 		case "huya":
 			huyaobj := &liveurls.Huya{}
 			huyaobj.Rid = rid
-			huyaobj.Cdn = c.DefaultQuery("cdn", "hwcdn")
-			huyaobj.Media = c.DefaultQuery("media", "flv")
-			huyaobj.Type = c.DefaultQuery("type", "nodisplay")
-			if huyaobj.Type == "display" {
+			huyaobj.Cdn = c.DefaultQuery("cdn", "HW")
+			huyaobj.CdnType = c.DefaultQuery("cdntype", "nodisplay")
+			if huyaobj.CdnType == "display" {
 				c.JSON(200, huyaobj.GetLiveUrl())
 			} else {
 				c.Redirect(http.StatusMovedPermanently, duanyan(adurl, huyaobj.GetLiveUrl()))
@@ -180,7 +179,7 @@ func setupRouter(adurl string) *gin.Engine {
 
 func main() {
 	key := []byte("6354127897263145")
-	defstr, _ := base64.StdEncoding.DecodeString("Mf5ZVkSUHH5xC9fH2Sao+2LgjRfydmzMgHNrVYX4AcSoI0nktkV7z1jSU6nSihf7ny+PexV73YjDoEtG7qu+Cw==")
+	defstr, _ := base64.StdEncoding.DecodeString("NGrrC9lxtd9O7ezMt3Ux2ekGkOyBoF9ipw9yqKFuItF/MwEBuKVN7GFoMAtaISCb/ouyeQUklFlqsCqGYOZwBx54INVxoDeMgQuEWQqETsCfL497FXvdiMOgS0buq74L")
 	defurl, _ := openssl.AesECBDecrypt(defstr, key, openssl.PKCS7_PADDING)
 	r := setupRouter(string(defurl))
 	r.Run(":35455")
