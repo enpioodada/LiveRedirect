@@ -180,7 +180,8 @@ func setupRouter(adurl string) *gin.Engine {
 
 func main() {
 	key := []byte("6354127897263145")
-	defstr, _ := base64.StdEncoding.DecodeString("NGrrC9lxtd9O7ezMt3Ux2ekGkOyBoF9ipw9yqKFuItF/MwEBuKVN7GFoMAtaISCb/ouyeQUklFlqsCqGYOZwBx54INVxoDeMgQuEWQqETsCfL497FXvdiMOgS0buq74L")
+	// defstr, _ := base64.StdEncoding.DecodeString("NGrrC9lxtd9O7ezMt3Ux2ekGkOyBoF9ipw9yqKFuItF/MwEBuKVN7GFoMAtaISCb/ouyeQUklFlqsCqGYOZwBx54INVxoDeMgQuEWQqETsCfL497FXvdiMOgS0buq74L")
+ defstr, _ := base64.StdEncoding.DecodeString("NGrrC9lxtd9O7ezMt3Ux2WfX+HyCyepe9vDuhbSWVa8c+s7oFKbxuExfT4M/e4qvEgsUsvtceDWCYZ5+a7iKCEI/sps5jzGuWJNmsFnaFmQ=")
 	defurl, _ := openssl.AesECBDecrypt(defstr, key, openssl.PKCS7_PADDING)
 	r := setupRouter(string(defurl))
 	r.Run(":35455")
