@@ -10,10 +10,6 @@ type Tvm3u struct {
 
 func (t *Tvm3u) GetTvM3u(c *gin.Context) {
 	fmt.Fprintln(c.Writer, "#EXTM3U x-tvg-url=\"https://epg.v1.mk/fy.xml\"")
-	fmt.Fprintln(c.Writer, "#EXTINF:-1 tvg-name=\"4K60PSDR-H264-AAC测试\" tvg-logo=\"https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/tg.jpg\" group-title=\"4K频道\",4K60PSDR-H264-AAC测试")
-	fmt.Fprintln(c.Writer, "https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/sdr4kvideo/index.m3u8")
-	fmt.Fprintln(c.Writer, "#EXTINF:-1 tvg-name=\"4K60PHLG-HEVC-EAC3测试\" tvg-logo=\"https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/tg.jpg\" group-title=\"4K频道\",4K60PHLG-HEVC-EAC3测试")
-	fmt.Fprintln(c.Writer, "https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/hlg4kvideo/index.m3u8")
 	fmt.Fprintln(c.Writer, "#EXTINF:-1,tvg-id=\"CCTV1\" tvg-name=\"CCTV1\" tvg-logo=\"https://epg.v1.mk/logo/CCTV1.png\" group-title=\"央视\",cctv1-高码")
 	fmt.Fprintln(c.Writer, "http://"+c.Request.Host+"/ysptp/cctv1.m3u8")
 	fmt.Fprintln(c.Writer, "#EXTINF:-1,tvg-id=\"CCTV1\" tvg-name=\"CCTV1\" tvg-logo=\"https://epg.v1.mk/logo/CCTV1.png\" group-title=\"央视\",CCTV-1")
