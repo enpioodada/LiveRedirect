@@ -10,10 +10,6 @@ type Gdm3u struct {
 
 func (g *Gdm3u) GetGdm3u(c *gin.Context) {
 	fmt.Fprintln(c.Writer, "#EXTM3U x-tvg-url=\"https://epg.v1.mk/fy.xml\"")
-	fmt.Fprintln(c.Writer, "#EXTINF:-1,tvg-id=\"4K60PSDR-H264-AAC测试\" tvg-name=\"4K60PSDR-H264-AAC测试\" tvg-logo=\"https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/tg.jpg\" group-title=\"4K频道\",4K60PSDR-H264-AAC测试")
-	fmt.Fprintln(c.Writer, "https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/sdr4kvideo/index.m3u8")
-	fmt.Fprintln(c.Writer, "#EXTINF:-1,tvg-id=\"4K60PHLG-HEVC-EAC3测试\" tvg-name=\"4K60PHLG-HEVC-EAC3测试\" tvg-logo=\"https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/tg.jpg\" group-title=\"4K频道\",4K60PHLG-HEVC-EAC3测试")
-	fmt.Fprintln(c.Writer, "https://cdn.jsdelivr.net/gh/feiyangdigital/testvideo/hlg4kvideo/index.m3u8")
 	fmt.Fprintln(c.Writer, "#EXTINF:-1,tvg-id=\"CCTV1\" tvg-name=\"CCTV1\" tvg-logo=\"https://epg.v1.mk/logo/CCTV1.png\" group-title=\"央视\",CCTV-1")
 	fmt.Fprintln(c.Writer, "http://"+c.Request.Host+"/gdcucc/G_CCTV-1-CQ.m3u8")
 	fmt.Fprintln(c.Writer, "#EXTINF:-1,tvg-id=\"cctv2\" tvg-name=\"cctv2\" tvg-logo=\"https://epg.v1.mk/logo/cctv2.png\" group-title=\"央视\",CCTV-2")
