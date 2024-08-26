@@ -3,7 +3,7 @@
 ## 一、推荐使用Docker一键运行，并配置watchtower监听Docker镜像更新，直接一劳永逸：
 ### 1，使用Docker一键配置allinone
 ```
-docker run -d --restart unless-stopped --privileged=true -p 35455:35455 --name allinone youshandefeiyang/allinone
+docker run -d --restart unless-stopped --net=host --privileged=true -p 35455:35455 --name allinone youshandefeiyang/allinone
 ```
 ### 2，一键配置watchtower每天凌晨两点自动监听allinone镜像更新，同步GitHub仓库：
 ```
